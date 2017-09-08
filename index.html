@@ -29,6 +29,20 @@
             $('#wrapper').gitdown( {'title': 'DownSlide',
                                     'content': 'README.me',
                                    } );
+            
+            $(document).keyup(function(e) {
+                if( e.which == 37 || e.which == 100 ) {
+                    var $prev = $('.toc a.current').prev()[0];
+                    if (typeof $prev === "undefined") {
+                        $('.toc a:last-child')[0].click();
+                    } else $prev.click();
+                } else if (e.keyCode === 39 || e.which == 102 ) {
+                    var $next = $('.toc a.current').next()[0];
+                    if (typeof $next === "undefined") {
+                        $('.toc a:first-child')[0].click();
+                    } else $next.click();
+                }
+            })
         
         });
     </script>

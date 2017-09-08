@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Baloo|Lobster');
+@import url('https://fonts.googleapis.com/css?family=Baloo');
 
 @media print {
   #info {
@@ -21,89 +21,23 @@
   font-family: 'Baloo', cursive;
 }
 
-#wrapper {
+html, body, #wrapper, .container {
+  overflow: hidden;
+}
+
+.inner {
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: #4d2a00;
-  background-image: url("https://www.transparenttextures.com/patterns/tileable-wood-colored.png");
-  background-size: 600px;
+  width: 100%;
+  background: radial-gradient(ellipse at center, rgba(109,84,70,0.2) 0%,rgba(91,40,1,1) 100%), url("https://ugotsta.github.io/gitdown/assets/rough-wood-vertical.jpg");
+  box-shadow: inset 0 0 150px black, inset 0 0 50px black;
+  background-blend-mode: color-dodge;
 }
 
-#wrapper::before {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: rgb(169,3,41);
-  background: -moz-linear-gradient(-45deg, rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%);
-  background: -webkit-linear-gradient(-45deg, rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%);
-  background: linear-gradient(135deg, rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%);
-  pointer-events: none;
-}
-
-#wrapper::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: -moz-linear-gradient(top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 31%, rgba(0,0,0,0.1) 53%, rgba(0,0,0,0.2) 73%, rgba(0,0,0,0.65) 100%);
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.2) 31%,rgba(0,0,0,0.1) 53%,rgba(0,0,0,0.2) 73%,rgba(0,0,0,0.65) 100%);
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.2) 31%,rgba(0,0,0,0.1) 53%,rgba(0,0,0,0.2) 73%,rgba(0,0,0,0.65) 100%);
-  mix-blend-mode: overlay;
-  z-index: 1;
-  opacity: 0.75;
-  pointer-events: none;
-}
-
-#custom .section {
-  background: #FFF9ED;
-  border: 10px solid white;
-  box-shadow: 0 10px 60px rgba(0,0,0,0.5);
-}
-
-#custom .section::before {
-  content: "";
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  position: absolute;
-  background: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 24%, rgba(0,0,0,0) 56%, rgba(0,0,0,0.1) 76%, rgba(0,0,0,0.3) 100%);
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.2) 24%,rgba(0,0,0,0) 56%,rgba(0,0,0,0.1) 76%,rgba(0,0,0,0.3) 100%);
-  background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.2) 24%,rgba(0,0,0,0) 56%,rgba(0,0,0,0.1) 76%,rgba(0,0,0,0.3) 100%);
-  opacity: 0.3;
-  pointer-events: none;
-}
-
-#wrapper .section a.handle {
-  color: white;
-  font-family: 'Lobster', cursive;
-  pointer-events: none;
-}
-
-a, .info a {
-  color: #767994;
-}
-
-#wrapper .section h1,
-#wrapper .section h2
-{
-  position: absolute;
-  top: -0.85em;
-  text-align: center;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-  font-weight: bold;
-  color: white;
-  font-size: 2.5em;
-}
-
-/* Section */
+/* Sections */
 
 .section {
   position: absolute;
@@ -120,24 +54,33 @@ a, .info a {
   margin: auto;
   width: 50%;
   height: 30%;
+  overflow: hidden;
+  background: #eee;
+  border: 10px solid white;
+  box-shadow: 0 10px 80px rgba(0,0,0,0.5);
 }
 
 .section .content {
   display: block;
   position: relative;
-  padding: 10px;
-  color: rgba(0,0,0,0.95);
+  color: rgba(0,0,0,0.5);
   opacity: 1;
-}
-
-.content h1 {
-  padding-top: 30px;
-  padding-bottom: 50px;
+  padding-top: 6px;
 }
 
 .section a {
-  color: purple;
+  color: #4F6580;
   text-decoration: none;
+}
+
+.info a {
+  color: #76869C;
+}
+
+.section a.handle {
+  pointer-events: none;
+  color: #666;
+  text-shadow: 0px 1px 1px white, 0px 2px 2px grey; /*, 0px 4px 1px white, 0px 6px 8px grey;*/
 }
 
 .section a:hover {
@@ -154,24 +97,22 @@ a, .info a {
   margin-bottom: 0.5em;
 }
 
-.section code {
-  box-shadow: inset 0 0 60px white;
-  padding: 0 6px;
-}
+/* Slide related styles and animations */
 
-.section:not(.current) {
+.section {
   opacity: 0;
 }
 
 .section.old {
-  mix-blend-mode: color-burn;
-  animation: fadeout 1s ease-in-out;
+  opacity: 0;
+  z-index: 1;
+  animation: fadeout 0.5s ease-in-out;
 }
 
 .section.current {
   opacity: 1;
   z-index: 1;
-  animation: fadein 1s ease-in-out;
+  animation: fadein 1s ease;
 }
 
 /* ANIMATIONS */
@@ -181,21 +122,26 @@ a, .info a {
         top: 0%;
         right: 100%;
         opacity: 0;
+        transform: perspective(2000px) rotateY(60deg) scale(2);
     }
     100% {
         right: 0%;
         top: 0%;
         opacity: 1;
+        transform: perspective(2000px) rotateY(0deg) scale(1);
     }
 }
 
 @keyframes fadeout {
     0% {
+        left: 0%;
         opacity: 1;
+        transform: perspective(2000px) rotateY(60deg) scale(1);
     }
     100% {
-        left:100%;
+        left: 100%;
         opacity: 0;
+        transform: perspective(2000px) rotateY(120deg) scale(2);
     }
 }
 
