@@ -105,7 +105,6 @@ html, body, #wrapper, .container {
 
 .section.old {
   opacity: 0;
-  z-index: 1;
   animation: fadeout 0.5s ease-in-out;
 }
 
