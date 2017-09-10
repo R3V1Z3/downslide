@@ -35,6 +35,7 @@ html, body, #wrapper, .container {
   background: radial-gradient(ellipse at center, rgba(109,84,70,0.2) 0%,rgba(91,40,1,1) 100%), url("https://ugotsta.github.io/gitdown/assets/rough-wood-vertical.jpg");
   box-shadow: inset 0 0 150px black, inset 0 0 50px black;
   background-blend-mode: color-dodge;
+  overflow: hidden;
 }
 
 /* Sections */
