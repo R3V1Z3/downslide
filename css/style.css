@@ -104,15 +104,27 @@ html, body, #wrapper, .container {
   opacity: 0;
 }
 
-.section.old {
+.section.old,
+.section.old.lo {
   opacity: 0;
   animation: fadeout 0.5s ease-in-out;
 }
 
-.section.current {
+.section.old.hi {
+  animation: fadein 0.5s ease;
+  animation-direction: reverse;
+}
+
+.section.current,
+.section.current.hi {
   opacity: 1;
   z-index: 1;
-  animation: fadein 1s ease;
+  animation: fadein 0.5s ease;
+}
+
+.section.current.lo {
+  animation: fadeout 0.5s ease-in-out;
+  animation-direction: reverse;
 }
 
 /* ANIMATIONS */
