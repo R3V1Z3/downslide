@@ -13,8 +13,15 @@ As with other GitDown projects, DownSlide is fully themable/skinnable using CSS.
 ## GitHub and GitHub Pages
 GitHub is a developer focused code-hosting platform. GitHub Pages lets you host code for HTML websites at no cost. With that, you can host your own DownSlide driven website for free.
 
-## Example Gists
-- [An exhibit of Markdown](?gist=deb74713e6aff8fdfce2) - Another great showcase for Markdown rendering.
-- [Vim Cheats](?gist=c002acb756d5cf09b1ad98494a81baa3) - Simple, intuitive cheatsheet for Vim.
+# Examples <!-- {$gd_info} -->
+<!-- {$gd_help_ribbon} -->
+<!-- {$gd_element_count} -->
 
-<!-- [options: parameters_disallowed=''] -->
+Example Gists <!-- {$gd_gist} -->
+- [An exhibit of Markdown](https://gist.github.com/deb74713e6aff8fdfce2) - Another great showcase for Markdown rendering.
+- [Vim Cheats](https://gist.github.com/c002acb756d5cf09b1ad98494a81baa3) - Simple, intuitive cheatsheet for Vim.
+
+Themes <!-- {$gd_css} -->
+
+<!-- {$gd_toc="Table of Contents"} -->
+<!-- {$gd_hide} -->
