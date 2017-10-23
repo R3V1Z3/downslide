@@ -3,7 +3,7 @@ jQuery(document).ready(function() {
 
     // attach the plugin to an element
     $('#wrapper').gitdown( {    'title': 'DownSlide',
-                                'content': 'README.md',
+                                'file': 'README.md',
                                 'callback': main
     } );
     var $gd = $('#wrapper').data('gitdown');
