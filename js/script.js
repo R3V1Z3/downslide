@@ -11,7 +11,7 @@ jQuery(document).ready(function() {
     function main() {
         
         if ( !$gd.settings.loaded ) {
-            register_events();
+            register_events_onstartup();
         }
         find_video_references();
 
@@ -45,7 +45,11 @@ jQuery(document).ready(function() {
     }
     
     function register_events() {
+    }
 
+    // events to be loaded only at startup
+    function register_events_onstartup() {
+        // LEFT and RIGHT arrows
         document.addEventListener('keyup', (event) => {
             var key = event.key;
             if ( key === 'ArrowLeft' ) {
@@ -60,7 +64,6 @@ jQuery(document).ready(function() {
                 } else $next.click();
             }
           }, false);
-
     }
 
 });
