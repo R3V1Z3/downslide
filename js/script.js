@@ -10,8 +10,11 @@ jQuery(document).ready(function() {
 
     function main() {
         
-        register_events();
+        if ( !$gd.settings.loaded ) {
+            register_events();
+        }
         find_video_references();
+
     }
     
     function find_video_references() {
