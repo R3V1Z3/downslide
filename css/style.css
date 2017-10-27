@@ -25,15 +25,6 @@ html, body, #wrapper, .container {
   overflow: hidden;
 }
 
-iframe.bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
 .inner {
   position: absolute;
   top: 0;
@@ -83,8 +74,13 @@ iframe.bg-video {
   text-decoration: none;
 }
 
-.info a {
-  color: #76869C;
+iframe.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 .section a.handle {
@@ -136,58 +132,32 @@ iframe.bg-video {
 /* ANIMATIONS */
 
 @keyframes in {
-    0% {
-        right: 100%;
-        opacity: 0;
-        transform: perspective(2000px) rotateY(60deg) scale(2);
-    }
-    100% {
-        right: 0%;
-        opacity: 1;
-        transform: perspective(2000px) rotateY(0deg) scale(1);
-    }
+    0% { right: 100%; opacity: 0; transform: perspective(2000px) rotateY(60deg) scale(2); }
+    100% { right: 0%; opacity: 1; transform: perspective(2000px) rotateY(0deg) scale(1); }
 }
 
 @keyframes out {
-    0% {
-        left: 0%;
-        opacity: 1;
-        transform: perspective(2000px) rotateY(0deg) scale(1);
-    }
-    100% {
-        left: 100%;
-        opacity: 0;
-        transform: perspective(2000px) rotateY(120deg) scale(2);
-    }
+    0% { left: 0%; opacity: 1; transform: perspective(2000px) rotateY(0deg) scale(1); }
+    100% { left: 100%; opacity: 0; transform: perspective(2000px) rotateY(120deg) scale(2); }
 }
 
 @keyframes in-reverse {
-  0% {
-    right: 0%;
-    opacity: 1;
-    transform: perspective(2000px) rotateY(0deg) scale(1);
-  }
-  100% {
-    right: 100%;
-    opacity: 0;
-    transform: perspective(2000px) rotateY(80deg) scale(2);
-  }
+  0% { right: 0%; opacity: 1; transform: perspective(2000px) rotateY(0deg) scale(1); }
+  100% { right: 100%; opacity: 0; transform: perspective(2000px) rotateY(80deg) scale(2); }
 }
 
 @keyframes out-reverse {
-  0% {
-    opacity: 0;
-    transform: perspective(2000px) rotateY(60deg) scale(2);
-  }
-  100% {
-    opacity: 1;
-    transform: perspective(2000px) rotateY(0deg) scale(1);
-  }
+  0% { opacity: 0; transform: perspective(2000px) rotateY(60deg) scale(2); }
+  100% { opacity: 1; transform: perspective(2000px) rotateY(0deg) scale(1); }
 }
 
 /* ------------------------------------------------------------------------ */
 
 /* Info panel */
+.info a {
+  color: #76869C;
+}
+
 .info .toc a.current {
   color: gray;
   pointer-events: none;
