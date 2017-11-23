@@ -38,17 +38,10 @@ Themes <!-- {$gd_css} -->
 
 <!-- {$gd_slider_fontsize="110,50,300,1,%"} -->
 
-<!-- {$gd_select_primary-color} -->
-- Default
-- Slategrey
-- Burlywood
-- Green
-- Magenta
-- Brown
-- Red
-- Dodgerblue
+<!-- {$gd_theme_variables} -->
 
 <!-- {$gd_collapsible_end_appearance} -->
 
 <!-- {$gd_toc="Table of Contents"} -->
+
 <!-- {$gd_hide} -->
