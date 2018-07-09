@@ -110,6 +110,8 @@ Themes <!-- {$gd_css} -->
 
 <!-- {$gd_slider_height="400px,4,2000,1,px"} -->
 
+<!-- {$gd_slider_padding="10px,0,500,1,px"} -->
+
 <!-- {$gd_slider_inner-space="100px,0,300,1,px"} -->
 
 <!-- {$gd_slider_outer-space="0px,0,3000,1,px"} -->

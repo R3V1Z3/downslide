@@ -23,6 +23,8 @@
   --height: 400px;
   --fontsize: 140%;
 
+  --padding: 10px;
+
   --inner-space: 100px;
   --outer-space: 0px;
 
@@ -151,6 +153,7 @@ html, body, #wrapper, .container {
   position: fixed;
   width: var(--width);
   height: var(--height);
+  padding: var(--padding);
   font-size: var(--fontsize);
   margin: auto;
   top: 0;
