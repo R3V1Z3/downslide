@@ -1,5 +1,7 @@
 # DownSlide
-Simple presentation tool built with [GitDown](https://ugotsta.github.io/gitdown/) framework, utilizing GitHub's various services and Markdown for content formatting.
+Simple, Markdown-based presentation tool. It splits Markdown headers and their content sections into slides and presents them through a configurable front-end.
+
+Press <kbd>➡</kbd> to advance.
 
 ## Made for Simplicity
 DownSlide is built to simplify the process of creating presentations. It attempts to automatically generate a sleek and usable presentation by parsing Markdown content into slide sections.
@@ -41,6 +43,84 @@ Themes <!-- {$gd_css} -->
 <!-- {$gd_theme_variables} -->
 
 <!-- {$gd_collapsible_end_appearance} -->
+
+
+<!-- {$gd_collapsible_effects} -->
+
+<!-- {$gd_select_tiltshift} -->
+- None
+- *Elegant
+- Extreme
+
+<!-- {$gd_select_svg-filter} -->
+- *None
+
+-----
+
+<!-- {$gd_slider_vignette="0.5,0,1,0.025"} -->
+
+<!-- {$gd_slider_brightness="1,0,3,0.05"} -->
+
+<!-- {$gd_slider_contrast="100%,0,300,1,%"} -->
+
+<!-- {$gd_slider_grayscale="0%,0,100,1,%"} -->
+
+<!-- {$gd_slider_hue-rotate="0deg,0,360,1,deg"} -->
+
+<!-- {$gd_slider_invert="0%,0,100,1,%"} -->
+
+<!-- {$gd_slider_saturate="100%,0,300,1,%"} -->
+
+<!-- {$gd_slider_sepia="0%,0,100,1,%"} -->
+
+<!-- {$gd_slider_blur="0px,0,20,1,px"} -->
+
+<!-- {$gd_collapsible_end_effects} -->
+
+
+
+
+<!-- {$gd_collapsible_perspective} -->
+
+<!-- {$gd_slider_scale="0,1,5,0.1"} -->
+
+<!-- {$gd_slider_perspective="1500px,0,2000,1,px"} -->
+
+<!-- {$gd_slider_originX="50%,0,100,1,%"} -->
+
+<!-- {$gd_slider_originY="50%,0,100,1,%"} -->
+
+<!-- {$gd_slider_rotateX="0deg,0,360,1,deg"} -->
+
+<!-- {$gd_slider_rotateY="0deg,0,360,1,deg"} -->
+
+<!-- {$gd_slider_scaleZ="0,1,5,0.1"} -->
+
+<!-- {$gd_slider_rotateZ="0deg,0,360,1,deg"} -->
+
+<!-- {$gd_slider_translateZ="0px,-500,500,1,px"} -->
+
+<!-- {$gd_collapsible_end_perspective} -->
+
+
+
+<!-- {$gd_collapsible_dimensions} -->
+
+<!-- {$gd_slider_width="960px,4,4000,1,px"} -->
+
+<!-- {$gd_slider_height="400px,4,2000,1,px"} -->
+
+<!-- {$gd_slider_inner-space="100px,0,300,1,px"} -->
+
+<!-- {$gd_slider_outer-space="1000px,0,3000,1,px"} -->
+
+<!-- {$gd_slider_offsetX="0px,-4000,4000,1,px"} -->
+
+<!-- {$gd_slider_offsetY="0px,-4000,4000,1,px"} -->
+
+<!-- {$gd_collapsible_end_dimensions} -->
+
+
 
 <!-- {$gd_collapsible_contents} -->
 

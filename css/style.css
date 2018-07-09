@@ -14,6 +14,121 @@
 
 @page { size:8.5in 11in; margin: 0.25cm }
 
+:root {
+  --bg: cornsilk;
+  --color: black;
+  /* --font: 'Baloo', sans-serif, serif, monospace; */
+
+  --width: 960px;
+  --height: 400px;
+  --fontsize: 140%;
+
+  --inner-space: 100px;
+  --outer-space: 1000px;
+
+  --brightness: 1;
+  --contrast: 100%;
+  --grayscale: 0%;
+  --hue-rotate: 0deg;
+  --invert: 0%;
+  --saturate: 100%;
+  --sepia: 0%;
+  --blur: 0px;
+
+  --scale: 1.0;
+  --perspective: 1500px;
+  --rotateX: 0deg;
+  --rotateY: 0deg;
+  --rotateZ: 0deg;
+  --translateZ: 0px;
+
+  --originX: 50%;
+  --originY: 50%;
+}
+
+.inner {
+  transform:
+    scale(var(--scale))
+    perspective(var(--perspective))
+    rotateX(var(--rotateX))
+    rotateY(var(--rotateY))
+    rotateZ(var(--rotateZ))
+    translateZ(var(--translateZ));
+  transform-origin: var(--originX) var(--originY);
+  transform-style: preserve-3d;
+  position: fixed;
+}
+
+.gd-default .inner {
+  height: 2160px;
+  width: 3840px;
+  background-image: url("https://ugotsta.github.io/gitdown/assets/rough-wood-vertical.jpg");
+  overflow: hidden;
+}
+
+.fx {
+  width: 2160px;
+  height: 3840px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  filter:
+    brightness(var(--brightness))
+    contrast(var(--contrast))
+    grayscale(var(--grayscale))
+    hue-rotate(var(--hue-rotate))
+    invert(var(--invert))
+    saturate(var(--saturate))
+    sepia(var(--sepia))
+    blur(var(--blur));
+}
+
+#vignette {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
+}
+
+/* tiltshift styles */
+
+.code.tiltshift-elegant {
+  -webkit-mask-box-image: linear-gradient(transparent 0%, black 30%, black 50%, black 70%, transparent 100%);
+}
+
+.code-overlay.tiltshift-elegant {
+  display: block;
+  filter: blur(2px);
+  -webkit-mask-box-image: linear-gradient(black 0%, transparent 50%, black 100%);
+}
+
+.code.tiltshift-extreme {
+  -webkit-mask-box-image: linear-gradient(transparent 0%, black 50%, transparent 100%);
+}
+
+.code-overlay.tiltshift-extreme {
+  display: block;
+  filter: blur(4px);
+  -webkit-mask-box-image: linear-gradient(black 0%, transparent 40%, black 100%);
+}
+
+.code-overlay {
+  display: none;
+  position: absolute;
+  top: -1em;
+  left: 0;
+  background: none;
+  pointer-events: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -23,37 +138,25 @@
 
 html, body, #wrapper, .container {
   overflow: hidden;
-}
-
-.inner {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  background: radial-gradient(ellipse at center, rgba(109,84,70,0.2) 0%,rgba(91,40,1,1) 100%), url("https://ugotsta.github.io/gitdown/assets/rough-wood-vertical.jpg");
-  box-shadow: inset 0 0 150px black, inset 0 0 50px black;
-  background-blend-mode: color-dodge;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
   overflow: hidden;
 }
 
 /* Sections */
 .section {
-  position: absolute;
-  max-width: 960px;
-  min-width: 600px;
-  max-height: 600px;
-  min-height: 400px;
+  position: fixed;
+  width: var(--width);
+  height: var(--height);
+  font-size: var(--fontsize);
+  margin: auto;
   top: 0;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
-  padding: 20px;
-  font-size: 140%;
-  margin: auto;
-  width: 50%;
-  height: 30%;
   overflow: hidden;
   background: #eee;
   border: 10px solid white;
@@ -63,6 +166,7 @@ html, body, #wrapper, .container {
 
 .section .content {
   display: block;
+  margin: auto;
   position: relative;
   color: rgba(0,0,0,0.5);
   opacity: 1;
@@ -131,24 +235,29 @@ iframe.bg-video {
 
 /* ANIMATIONS */
 
+/* 
+    NOTE: mix-blend-mode:normal has strange effect in current Chrome version
+    when using transforms and SVG filters
+*/
+
 @keyframes in {
-    0% { right: 100%; opacity: 0; transform: perspective(2000px) rotateY(60deg) scale(2); }
-    100% { right: 0%; opacity: 1; transform: perspective(2000px) rotateY(0deg) scale(1); }
+    0% { opacity: 0; mix-blend-mode: lighten; transform: translateX(100%) perspective(2000px) rotateY(60deg) scale(2); }
+    100% { opacity: 1; mix-blend-mode: lighten; transform: translateX(0px) perspective(2000px) rotateY(0deg) scale(1); }
 }
 
 @keyframes out {
-    0% { left: 0%; opacity: 1; transform: perspective(2000px) rotateY(0deg) scale(1); }
-    100% { left: 100%; opacity: 0; transform: perspective(2000px) rotateY(120deg) scale(2); }
+    0% { opacity: 1; mix-blend-mode: lighten; transform: translateX(0px) perspective(2000px) rotateY(0deg) scale(1); }
+    100% { opacity: 0; mix-blend-mode: lighten; transform: translateX(-100%) perspective(2000px) rotateY(120deg) scale(2); }
 }
 
 @keyframes in-reverse {
-  0% { right: 0%; opacity: 1; transform: perspective(2000px) rotateY(0deg) scale(1); }
-  100% { right: 100%; opacity: 0; transform: perspective(2000px) rotateY(80deg) scale(2); }
+  0% { opacity: 1; mix-blend-mode: lighten; transform: translateX(0px) perspective(2000px) rotateY(0deg) scale(1); }
+  100% { opacity: 0; mix-blend-mode: lighten; transform: translateX(100%) perspective(2000px) rotateY(80deg) scale(2); }
 }
 
 @keyframes out-reverse {
-  0% { opacity: 0; transform: perspective(2000px) rotateY(60deg) scale(2); }
-  100% { opacity: 1; transform: perspective(2000px) rotateY(0deg) scale(1); }
+  0% { opacity: 0; mix-blend-mode: lighten; transform: perspective(2000px) rotateY(60deg) scale(2); }
+  100% { opacity: 1; mix-blend-mode: lighten; transform: perspective(2000px) rotateY(0deg) scale(1); }
 }
 
 /* ------------------------------------------------------------------------ */
