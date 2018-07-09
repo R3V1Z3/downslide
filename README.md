@@ -112,7 +112,7 @@ Themes <!-- {$gd_css} -->
 
 <!-- {$gd_slider_inner-space="100px,0,300,1,px"} -->
 
-<!-- {$gd_slider_outer-space="1000px,0,3000,1,px"} -->
+<!-- {$gd_slider_outer-space="0px,0,3000,1,px"} -->
 
 <!-- {$gd_slider_offsetX="0px,-4000,4000,1,px"} -->
 
