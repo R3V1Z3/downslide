@@ -47,17 +47,33 @@ Themes <!-- {$gd_css} -->
 
 <!-- {$gd_collapsible_effects} -->
 
-<!-- {$gd_select_tiltshift} -->
-- None
-- *Elegant
-- Extreme
+<!-- {$gd_select_vignette-blend} -->
+- *normal
+- initial
+- inherit
+- unset
+- multiply
+- screen
+- overlay
+- darken
+- lighten
+- color-dodge
+- color-burn
+- hard-light
+- soft-light
+- difference
+- exclusion
+- hue
+- saturation
+- color
+- luminosity
+
+<!-- {$gd_slider_vignette="0.25,0,1,0.025"} -->
 
 <!-- {$gd_select_svg-filter} -->
 - *None
 
 -----
-
-<!-- {$gd_slider_vignette="0.5,0,1,0.025"} -->
 
 <!-- {$gd_slider_brightness="1,0,3,0.05"} -->
 

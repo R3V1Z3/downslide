@@ -1,16 +1,9 @@
-var default_transform;
-var eid_inner = '.inner';
-
 const gd = new GitDown('#wrapper', {
     title: 'Downslide',
     content: 'README.md',
     merge_gists: true,
     callback: done
 });
-
-const eid = gd.eid;
-let timeout;
-let events_registered = false;
 
 function done() {
 
@@ -19,8 +12,8 @@ function done() {
 
     // wrap .inner with an fx div
     if ( $('.fx').length < 1 ) {
-        $(eid_inner).wrap('<div class="fx">');
-        $('#wrapper').append('<div id="vignette"></div>');
+        $(gd.eid_inner).wrap('<div class="fx">');
+        $('#wrapper').append('<div class="vignette-layer"></div>');
     }
     
     var v = $('.info .field.slider.vignette input').val();
@@ -30,10 +23,11 @@ function done() {
 
     var x = $('.info .slider.offsetX input').val();
     var y = $('.info .slider.offsetY input').val();
-    $(eid_inner).attr( 'data-x' , x );
-    $(eid_inner).attr( 'data-y' , y );
+    $(gd.eid_inner).attr( 'data-x' , x );
+    $(gd.eid_inner).attr( 'data-y' , y );
 
-    if ( !events_registered ) register_events();
+    if ( !gd.status.has('app-events-registered') )
+        register_events();
     // update outer-space option to configure  dimensions
     $('.info .field.outer-space input').change();
     center_view();
@@ -46,7 +40,7 @@ function vignette(v) {
     bg += `rgba(0,0,0,${v/3}) 60%,`;
     bg += `rgba(0,0,0,${v}) 100%)`;
     var s = '';
-    var vignette = document.querySelector( eid + ' #vignette' );
+    var vignette = document.querySelector( gd.eid + ' .vignette-layer' );
     if ( vignette !== null ) {
         vignette.style.backgroundImage = bg;
     }
@@ -133,28 +127,9 @@ function center_view() {
     $fx.style.transform = transform;
 }
 
-function remove_class_by_prefix( element, prefix ) {
-    const el = document.querySelector(element);
-    var classes = el.classList;
-    for( var c of classes ) {
-        if ( c.startsWith(prefix) ) el.classList.remove(c);
-    }
-}
-
-function update_class(type) {
-    var v = $(`.info .field.select.${type} select`).val().toLowerCase();
-    // remove existing classes first
-    remove_class_by_prefix( gd.eid + ' .code', type );
-    remove_class_by_prefix( gd.eid + ' .code-overlay', type );
-    if ( v !== 'none' || v !== null ) {
-        $('.code').addClass(`${type}-${v}`);
-        $('.code-overlay').addClass(`${type}-${v}`);
-    }
-}
-
 function register_events() {
 
-    events_registered = true;
+    gd.status.add('app-events-registered');
 
     window.addEventListener('resize', function(event){
         center_view();
@@ -197,14 +172,6 @@ function register_events() {
         fx.style.filter = style;
     });
 
-    $('.info .field.select.tiltshift select').change(function() {
-        update_class('tiltshift');
-    });
-
-    $('.info .field.select.font-effect select').change(function() {
-        update_class('font-effect');
-    });
-
     // mousewheel zoom handler
     $('.inner').on('wheel', function(e){
         // disallow zoom within parchment content so user can safely scroll text
@@ -223,7 +190,7 @@ function register_events() {
         center_view();
     });
 
-    interact(eid_inner)
+    interact(gd.eid_inner)
     .gesturable({
         onmove: function (event) {
             var $translatez = $('.info .slider.translatez input');
