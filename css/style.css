@@ -40,24 +40,24 @@
 
   --scale: 1.0;
   --perspective: 1500px;
-  --rotateX: 0deg;
-  --rotateY: 0deg;
-  --rotateZ: 0deg;
-  --translateZ: 0px;
+  --rotatex: 0deg;
+  --rotatey: 0deg;
+  --rotatez: 0deg;
+  --translatez: 0px;
 
-  --originX: 50%;
-  --originY: 50%;
+  --originx: 50%;
+  --originy: 50%;
 }
 
 .inner {
   transform:
     scale(var(--scale))
     perspective(var(--perspective))
-    rotateX(var(--rotateX))
-    rotateY(var(--rotateY))
-    rotateZ(var(--rotateZ))
-    translateZ(var(--translateZ));
-  transform-origin: var(--originX) var(--originY);
+    rotateX(var(--rotatex))
+    rotateY(var(--rotatey))
+    rotateZ(var(--rotatez))
+    translateZ(var(--translatez));
+  transform-origin: var(--originx) var(--originy);
   transform-style: preserve-3d;
   position: fixed;
 }
@@ -152,6 +152,10 @@ html, body, #wrapper, .container {
   text-decoration: none;
 }
 
+.section ul, .section ol {
+  margin: 0 1em;
+}
+
 iframe.bg-video {
   position: absolute;
   top: 0;
@@ -170,11 +174,6 @@ iframe.bg-video {
 .section a:hover {
   background: rgba(255,255,100,0.25);
   box-shadow: 0 0 6px rgba(255,255,100,0.25);
-}
-
-.section ul {
-  padding: 20px 0px;
-  list-style: none;
 }
 
 .section p {
@@ -237,20 +236,20 @@ iframe.bg-video {
 /* ------------------------------------------------------------------------ */
 
 /* Info panel */
-.info a {
+.nav a {
   color: #76869C;
 }
 
-.info .toc a.current {
+.nav .toc a.current {
   color: gray;
   pointer-events: none;
 }
 
-.info .toc a.current::before {
+.nav .toc a.current::before {
   content: "> ";
 }
 
-#custom .info a:hover {
+#custom .nav a:hover {
   color: #fff;
 }
 

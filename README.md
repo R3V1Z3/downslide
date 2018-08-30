@@ -24,126 +24,68 @@ As with other GitDown projects, DownSlide is fully themable/skinnable using CSS.
 ## GitHub and GitHub Pages
 GitHub is a developer focused code-hosting platform. GitHub Pages lets you host code for HTML websites at no cost. With that, you can host your own DownSlide driven website for free.
 
-# Examples <!-- {$gd_info} -->
-### Simple presentation engine
-<!-- {$gd_help_ribbon} -->
+# Downslide `🅖-nav`
 
-Example Gists <!-- {$gd_gist} -->
+`ⓘ The code below designates a list of content sources the user will be able to select from in the app.`
+
+content `🅖-datalist`
 - [An exhibit of Markdown](https://gist.github.com/deb74713e6aff8fdfce2) - Another great showcase for Markdown rendering.
 - [Vim Cheats](https://gist.github.com/c002acb756d5cf09b1ad98494a81baa3) - Simple, intuitive cheatsheet for Vim.
 
-<!-- {$gd_collapsible_appearance} -->
+## Appearance `🅖-collapsible`
 
------
+css `🅖-datalist`
+- [Dark Glow](https://gist.github.com/c6d0a4d16b627d72563b43b60a164c31)
 
-Themes <!-- {$gd_css} -->
+`🅖-theme-variables`
 
-<!-- {$gd_slider_fontsize="110,50,300,1,%"} -->
+## Effects `🅖-collapsible`
 
-<!-- {$gd_theme_variables} -->
+vignette-blend `🅖-select`
 
-<!-- {$gd_collapsible_end_appearance} -->
+vignette `🅖-slider="0.25,0,1,0.025"`
 
-
-<!-- {$gd_collapsible_effects} -->
-
-<!-- {$gd_select_vignette-blend} -->
-- *normal
-- initial
-- inherit
-- unset
-- multiply
-- screen
-- overlay
-- darken
-- lighten
-- color-dodge
-- color-burn
-- hard-light
-- soft-light
-- difference
-- exclusion
-- hue
-- saturation
-- color
-- luminosity
-
-<!-- {$gd_slider_vignette="0.25,0,1,0.025"} -->
-
-<!-- {$gd_select_svg-filter} -->
+svg-filter `🅖-select`
 - *None
 
------
+---
 
-<!-- {$gd_slider_brightness="1,0,3,0.05"} -->
+brightness `🅖-slider="1,0,3,0.05"`
+contrast `🅖-slider="100%,0,300,1,%"`
+grayscale `🅖-slider="0%,0,100,1,%"`
+hue-rotate `🅖-slider="0deg,0,360,1,deg"`
+invert `🅖-slider="0%,0,100,1,%"`
+saturate `🅖-slider="100%,0,300,1,%"`
+sepia `🅖-slider="0%,0,100,1,%"`
+blur `🅖-slider="0px,0,20,1,px"`
 
-<!-- {$gd_slider_contrast="100%,0,300,1,%"} -->
+## Perspective `🅖-collapsible`
 
-<!-- {$gd_slider_grayscale="0%,0,100,1,%"} -->
+scale `🅖-slider="0,1,5,0.1"`
+perspective `🅖-slider="1500px,0,2000,1,px"`
+originx `🅖-slider="50%,0,100,1,%"`
+originy `🅖-slider="50%,0,100,1,%"`
+rotatex `🅖-slider="0deg,0,360,1,deg"`
+rotatey `🅖-slider="0deg,0,360,1,deg"`
+scalez `🅖-slider="0,1,5,0.1"`
+rotatez `🅖-slider="0deg,0,360,1,deg"`
+translatez `🅖-slider="0px,-500,500,1,px"`
 
-<!-- {$gd_slider_hue-rotate="0deg,0,360,1,deg"} -->
+## Dimensions `🅖-collapsible`
 
-<!-- {$gd_slider_invert="0%,0,100,1,%"} -->
+width `🅖-slider="960px,4,4000,1,px"`
+height `🅖-slider="400px,4,2000,1,px"`
+padding `🅖-slider="10px,0,500,1,px"`
+inner-space `🅖-slider="100px,0,300,1,px"`
+outer-space `🅖-slider="0px,0,300,1,px"`
+offsetx `🅖-slider="0px,-4000,4000,1,px"`
+offsety `🅖-slider="0px,-4000,4000,1,px"`
 
-<!-- {$gd_slider_saturate="100%,0,300,1,%"} -->
+## Contents `🅖-collapsible`
 
-<!-- {$gd_slider_sepia="0%,0,100,1,%"} -->
+`🅖-toc`
 
-<!-- {$gd_slider_blur="0px,0,20,1,px"} -->
+## Help `🅖-group`
 
-<!-- {$gd_collapsible_end_effects} -->
-
-
-
-
-<!-- {$gd_collapsible_perspective} -->
-
-<!-- {$gd_slider_scale="0,1,5,0.1"} -->
-
-<!-- {$gd_slider_perspective="1500px,0,2000,1,px"} -->
-
-<!-- {$gd_slider_originX="50%,0,100,1,%"} -->
-
-<!-- {$gd_slider_originY="50%,0,100,1,%"} -->
-
-<!-- {$gd_slider_rotateX="0deg,0,360,1,deg"} -->
-
-<!-- {$gd_slider_rotateY="0deg,0,360,1,deg"} -->
-
-<!-- {$gd_slider_scaleZ="0,1,5,0.1"} -->
-
-<!-- {$gd_slider_rotateZ="0deg,0,360,1,deg"} -->
-
-<!-- {$gd_slider_translateZ="0px,-500,500,1,px"} -->
-
-<!-- {$gd_collapsible_end_perspective} -->
-
-
-
-<!-- {$gd_collapsible_dimensions} -->
-
-<!-- {$gd_slider_width="960px,4,4000,1,px"} -->
-
-<!-- {$gd_slider_height="400px,4,2000,1,px"} -->
-
-<!-- {$gd_slider_padding="10px,0,500,1,px"} -->
-
-<!-- {$gd_slider_inner-space="100px,0,300,1,px"} -->
-
-<!-- {$gd_slider_outer-space="0px,0,3000,1,px"} -->
-
-<!-- {$gd_slider_offsetX="0px,-4000,4000,1,px"} -->
-
-<!-- {$gd_slider_offsetY="0px,-4000,4000,1,px"} -->
-
-<!-- {$gd_collapsible_end_dimensions} -->
-
-
-
-<!-- {$gd_collapsible_contents} -->
-
-<!-- {$gd_toc} -->
-
-<!-- {$gd_collapsible_end_contents} -->
-
-<!-- {$gd_hide} -->
+`🅖-help`
+`🅖-hide`
