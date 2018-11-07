@@ -62,10 +62,10 @@
   position: fixed;
 }
 
-.gd-default .inner {
+.bd-default .inner {
   height: 2160px;
   width: 3840px;
-  background-image: url("https://ugotsta.github.io/gitdown/assets/rough-wood-vertical.jpg");
+  background-image: url("https://ugotsta.github.io/breakdown/assets/rough-wood-vertical.jpg");
   overflow: hidden;
 }
 

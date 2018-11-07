@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="gd-downslide" class="gd-slides gd-fullscreen gd-animated">
+<html lang="en" id="bd-downslide" class="bd-slides bd-fullscreen bd-animated">
 
 <head>
     <meta charset="utf-8">
@@ -8,10 +8,10 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.9/interact.min.js"></script>
 
-    <script src="//ugotsta.github.io/gitdown-madly/js/gitdown.js"></script>
+    <script src="//ugotsta.github.io/breakdown/js/breakdown.js"></script>
     <script src="js/script.js"></script>
-    
-    <link rel="stylesheet" type="text/css" href="//ugotsta.github.io/gitdown-madly/css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="//ugotsta.github.io/breakdown/css/style.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <title>DownSlide</title>
@@ -23,14 +23,14 @@
 
     <script>
 
-        const gd = new DownSlide('#wrapper', {
+        const bd = new DownSlide('#wrapper', {
             title: 'DownSlide',
             merge_content: true,
             callback: ready
         });
 
         function ready() {
-            gd.ready();
+            bd.ready();
             console.log('Callback executed.');
         }
 

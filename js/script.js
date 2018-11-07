@@ -1,4 +1,4 @@
-class DownSlide extends GitDown {
+class DownSlide extends BreakDown {
 
     constructor(el, options) {
         super(el, options);
